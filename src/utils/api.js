@@ -1,8 +1,19 @@
 import getQueryString from "./paramParser";
+import axios from "axios";
 
-export const host = "http://localhost:8080/";
+export const host =
+  /*"https://api-any-tune-sushantlp.c9users.io/";*/ "http://localhost:8080/";
 
 export default {
+  search: query => {
+    return new Promise((resolve, reject) => {
+      fetch(host + "api/v1/search?" + getQueryString({ type: query })).then(
+        response => {
+          response.json().then(videos => resolve(videos));
+        }
+      );
+    });
+  },
   getDownloadLink: getUrl => {
     return new Promise((resolve, reject) => {
       fetch(host + getUrl).then(response =>
@@ -12,7 +23,7 @@ export default {
   },
   getPlaylists: () => {
     return new Promise((resolve, reject) => {
-      fetch(host + "/api/v1/playlists").then(response =>
+      fetch(host + "api/v1/playlist?").then(response =>
         response.json().then(data => resolve(data.results))
       );
     });

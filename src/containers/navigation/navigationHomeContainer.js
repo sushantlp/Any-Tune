@@ -7,12 +7,15 @@ import { addSong } from "../../actions/nowPlayingActions";
 
 function mapStateToProps(state) {
   return {
-    playlists: state.trending.playlist
+    playlists: state.trending.playlists
   };
 }
 
-export default connect(mapStateToProps, {
-  getPlaylists: getPlaylists,
-  playSong: playSong,
-  addToNowPlaying: addSong
-})(NavigationHome);
+export default connect(
+  mapStateToProps,
+  {
+    getPlaylists: getPlaylists,
+    playSong: playSong,
+    addToNowPlaying: addSong
+  }
+)(NavigationHome);
