@@ -3,6 +3,7 @@ import React from "react";
 import { searchStatus } from "../../../actions/searchActions";
 import VideoCardListList from "../../../components/navigation/videoCard/list/videoCardListList";
 import classes from "./static/css/index.css";
+import { Dimmer, Loader } from "semantic-ui-react";
 
 export default class NavigationSearch extends React.Component {
   constructor(props) {
@@ -38,7 +39,11 @@ export default class NavigationSearch extends React.Component {
 
   getHeadline = () => {
     if (this.props.searchStatus === searchStatus.searching) {
-      return <span>Loading...</span>;
+      return (
+        <Dimmer active inverted>
+          <Loader inverted>Loading</Loader>
+        </Dimmer>
+      );
     } else if (this.props.searchStatus === searchStatus.searching) {
       return;
     }

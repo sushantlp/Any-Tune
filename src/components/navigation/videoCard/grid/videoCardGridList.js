@@ -1,10 +1,11 @@
 import React from "react";
 
-import { Grid } from "semantic-ui-react";
+import { Grid, Dimmer, Loader } from "semantic-ui-react";
 import VideoCardGrid from "./videoCardGrid";
+//import Loader from "react-loaders";
 
 import classes from "./static/css/videoCardGridList.css";
-
+//const Loader = require("react-loaders").Loader;
 export default class VideoCardGridList extends React.Component {
   getPlaylist = (name, videos) => {
     return (
@@ -39,11 +40,19 @@ export default class VideoCardGridList extends React.Component {
   };
   render() {
     if (this.props.playlists === null || this.props.playlists === undefined) {
-      return <div>Loading...</div>;
+      return (
+        <Dimmer active inverted>
+          <Loader inverted>Loading</Loader>
+        </Dimmer>
+      );
     }
 
     if (Object.keys(this.props.playlists).length === 0) {
-      return <div>Loading...</div>;
+      return (
+        <Dimmer active inverted>
+          <Loader inverted>Loading</Loader>
+        </Dimmer>
+      );
     }
 
     return <div>{this.getPlaylists()}</div>;

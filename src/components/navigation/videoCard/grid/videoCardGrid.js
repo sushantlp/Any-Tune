@@ -9,10 +9,9 @@ export default class VideoCardGrid extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      //  Play Icon is closed initially
+      // Play Icon is closed initially
       isOpened: false
     };
-    console.log("Constructor");
     // http://egorsmirnov.me/2015/08/16/react-and-es6-part3.html
     //this.toggleBox = this.toggleBox.bind(this);
   }
@@ -31,14 +30,14 @@ export default class VideoCardGrid extends React.Component {
 
   mouseLeave = () => {
     this.setState({
-      // toggle value of `opened`
+      // Play Icon of `Closed`
       isOpened: false
     });
   };
 
   mouseEnter = () => {
     this.setState({
-      // toggle value of `opened`
+      // Play Icon of `Opened`
       isOpened: true
     });
   };
@@ -58,6 +57,7 @@ export default class VideoCardGrid extends React.Component {
           <div
             onMouseLeave={() => this.mouseLeave()}
             onMouseEnter={() => this.mouseEnter()}
+            onClick={() => this.playsong()}
           >
             <Image src={this.props.video.thumb} className={classes.ImageCard} />
             {isOpened && (
