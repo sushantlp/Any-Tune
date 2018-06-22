@@ -1,5 +1,4 @@
 import getQueryString from "./paramParser";
-import axios from "axios";
 
 export const host =
   /*"https://api-any-tune-sushantlp.c9users.io/";*/ "http://localhost:8080/";

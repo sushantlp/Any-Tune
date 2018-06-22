@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Grid, Image, Header, Divider } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 import VideoCardGrid from "./videoCardGrid";
 
 import classes from "./static/css/videoCardGridList.css";
@@ -38,7 +38,7 @@ export default class VideoCardGridList extends React.Component {
     });
   };
   render() {
-    if (this.props.playlists == null || this.props.playlists == undefined) {
+    if (this.props.playlists === null || this.props.playlists === undefined) {
       return <div>Loading...</div>;
     }
 

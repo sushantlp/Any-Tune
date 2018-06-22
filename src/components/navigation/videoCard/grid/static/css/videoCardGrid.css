@@ -14,3 +14,10 @@
 .ImageCard {
   cursor: pointer;
 }
+.Duration {
+  color: #fa4861;
+}
+
+.Dropdown {
+  color: #6d6d6d;
+}

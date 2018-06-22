@@ -2,6 +2,7 @@ import React from "react";
 
 import { searchStatus } from "../../../actions/searchActions";
 import VideoCardListList from "../../../components/navigation/videoCard/list/videoCardListList";
+import classes from "./static/css/index.css";
 
 export default class NavigationSearch extends React.Component {
   constructor(props) {
@@ -10,17 +11,14 @@ export default class NavigationSearch extends React.Component {
   }
 
   componentDidMount() {
-    console.log("Mount");
     this.makeSearch(this.props);
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log("Receive");
     this.makeSearch(nextProps);
   }
 
   makeSearch = props => {
-    console.log(props.match.params.q);
     const query = props.match.params.q;
     if (this.query === query) {
       return;
@@ -48,10 +46,11 @@ export default class NavigationSearch extends React.Component {
 
   render() {
     return (
-      <div>
-        <h4>
-          Top Results for <span>{this.query}</span>
-        </h4>
+      <div className={classes.Container}>
+        <h2 className={classes.HeaderName}>
+          Top Results for{" "}
+          <span className={classes.HeaderSpan}>{this.query}</span>
+        </h2>
         <div>{this.getHeadline()}</div>
         {
           <VideoCardListList

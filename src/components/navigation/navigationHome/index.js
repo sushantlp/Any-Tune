@@ -1,7 +1,7 @@
 import React from "react";
 
 import VideoCardGridList from "../videoCard/grid/videoCardGridList";
-import classes from "./static/index.css";
+import classes from "./static/css/index.css";
 //import { Container } from "semantic-ui-react";
 
 export default class NavigationHome extends React.Component {

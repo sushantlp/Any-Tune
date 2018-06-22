@@ -9,17 +9,19 @@ import { Grid } from "semantic-ui-react";
 export default class VideoCardListList extends React.Component {
   render() {
     return (
-      <Grid relaxed columns={4}>
-        {this.props.videos &&
-          this.props.videos.map(video => (
-            <VideoCardGrid
-              video={video}
-              key={video.id}
-              addToNowPlaying={this.props.addToNowPlaying}
-              playSong={this.props.playSong}
-            />
-          ))}
-      </Grid>
+      <div>
+        <Grid relaxed columns={4}>
+          {this.props.videos &&
+            this.props.videos.map(video => (
+              <VideoCardGrid
+                video={video}
+                key={video.id}
+                addToNowPlaying={this.props.addToNowPlaying}
+                playSong={this.props.playSong}
+              />
+            ))}
+        </Grid>
+      </div>
     );
   }
 }
